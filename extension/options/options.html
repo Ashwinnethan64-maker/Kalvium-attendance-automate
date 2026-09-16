@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalvium Assistant Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <div class="brand">
+        <div class="brand-logo">K</div>
+        <div>
+          <h1>Kalvium Assistant Settings</h1>
+          <p>Configure monitoring preferences, safety rules, and feedback options</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="settings-grid">
+      <!-- Section 1: Monitoring & Polling -->
+      <div class="setting-card">
+        <h2>Monitoring & Schedule</h2>
+        
+        <div class="setting-row">
+          <div class="setting-info">
+            <label for="toggle-monitoring">Dashboard Monitoring</label>
+            <span class="setting-desc">Enable continuous state and session detection</span>
+          </div>
+          <input type="checkbox" id="toggle-monitoring" class="toggle">
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <label for="poll-interval">Polling Interval (seconds)</label>
+            <span class="setting-desc">DOM inspection frequency (Default: 15s)</span>
+          </div>
+          <input type="number" id="poll-interval" min="5" max="60" value="15" class="input-num">
+        </div>
+      </div>
+
+      <!-- Section 2: Notifications & Safety -->
+      <div class="setting-card">
+        <h2>Notifications & Safety Safeguards</h2>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <label for="toggle-notifications">Desktop Notifications</label>
+            <span class="setting-desc">Alert for attendance live, camera ready, and feedback</span>
+          </div>
+          <input type="checkbox" id="toggle-notifications" class="toggle">
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <label>Attendance Confirmation</label>
+            <span class="setting-desc">Require explicit user approval before attendance submit</span>
+          </div>
+          <span class="badge-locked">REQUIRED</span>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <label>Feedback Confirmation</label>
+            <span class="setting-desc">Require explicit approval before feedback submit</span>
+          </div>
+          <span class="badge-locked">REQUIRED</span>
+        </div>
+      </div>
+
+      <!-- Section 3: Feedback Preferences -->
+      <div class="setting-card">
+        <h2>Feedback Preferences</h2>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <label for="feedback-sentiment">Default Sentiment</label>
+            <span class="setting-desc">Sentiment selected in "How was the session?"</span>
+          </div>
+          <select id="feedback-sentiment" class="select-input">
+            <option value="positive">Positive (Great)</option>
+            <option value="neutral">Neutral (Okay)</option>
+            <option value="negative">Negative (Needs Improvement)</option>
+          </select>
+        </div>
+
+        <div class="setting-info" style="margin-top: 14px;">
+          <label>Pre-selected Feedback Tags</label>
+          <span class="setting-desc">Tags automatically checked during session feedback</span>
+        </div>
+        <div class="tags-grid" id="tags-container">
+          <label class="tag-checkbox"><input type="checkbox" value="Mentor" checked> Mentor</label>
+          <label class="tag-checkbox"><input type="checkbox" value="Content" checked> Content</label>
+          <label class="tag-checkbox"><input type="checkbox" value="Session"> Session</label>
+          <label class="tag-checkbox"><input type="checkbox" value="Pacing"> Pacing</label>
+          <label class="tag-checkbox"><input type="checkbox" value="Doubt Clearing"> Doubt Clearing</label>
+        </div>
+      </div>
+    </main>
+
+    <footer class="options-footer">
+      <span id="save-status" class="save-status"></span>
+      <button id="btn-save" class="btn-primary">Save Settings</button>
+    </footer>
+  </div>
+
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/state.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

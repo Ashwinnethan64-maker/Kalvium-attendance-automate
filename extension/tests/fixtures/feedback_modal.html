@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalvium Dashboard - Feedback Modal</title>
+</head>
+<body>
+  <div id="root">
+    <div class="dashboard-container">
+      <h2>My Day</h2>
+    </div>
+  </div>
+
+  <!-- Open Feedback Modal -->
+  <div role="dialog" data-state="open" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+    <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
+      <h3 class="text-xl font-bold mb-3">How was the session?</h3>
+      <p class="text-sm text-gray-500 mb-4">Rate your experience for Operating Systems & Kernels</p>
+
+      <!-- Sentiment emoji buttons -->
+      <div class="flex gap-4 justify-center mb-6">
+        <button aria-label="negative" class="p-3 border rounded-lg hover:bg-gray-50 text-2xl">😞</button>
+        <button aria-label="neutral" class="p-3 border rounded-lg hover:bg-gray-50 text-2xl">😐</button>
+        <button aria-label="positive" class="p-3 border rounded-lg hover:bg-gray-50 text-2xl bg-blue-50 border-blue-500">😃</button>
+      </div>
+
+      <!-- Tag options -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        <button class="px-3 py-1 text-xs border rounded-full bg-blue-100 border-blue-400">Mentor</button>
+        <button class="px-3 py-1 text-xs border rounded-full bg-blue-100 border-blue-400">Content</button>
+        <button class="px-3 py-1 text-xs border rounded-full bg-gray-100">Pacing</button>
+      </div>
+
+      <div class="flex justify-end gap-3">
+        <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Skip</button>
+        <button class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

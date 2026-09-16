@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalvium Dashboard - Take A Snap Modal</title>
+</head>
+<body>
+  <div id="root">
+    <div class="dashboard-container">
+      <h2>My Day</h2>
+      <div class="card rounded-lg border p-4">
+        <div class="font-bold text-lg">Operating Systems & Kernels</div>
+        <div class="text-sm text-gray-500">9:55 AM - 10:50 AM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Open Take A Snap Modal -->
+  <div role="dialog" data-state="open" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+    <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6">
+      <h3 class="text-xl font-bold mb-4">Take A Snap</h3>
+      
+      <!-- Live Video Feed Container -->
+      <div class="relative aspect-video bg-gray-900 rounded-lg overflow-hidden flex items-center justify-center">
+        <video id="webcam-preview" autoplay playsinline class="w-full h-full object-cover"></video>
+      </div>
+
+      <div class="mt-6 flex justify-end gap-3">
+        <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Cancel</button>
+        <button class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded">
+          Mark Attendance
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
